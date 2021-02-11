@@ -6,10 +6,11 @@ ENV DOCKER_PY_VERSION 1.10.6
 
 RUN apk add --update python3 py-pip openssl ca-certificates bash git sudo zip \
     && apk --update add --virtual build-dependencies python3-dev libffi-dev openssl-dev build-base \
-    && pip install --upgrade pip cffi \
+    && python3 -m pip install --upgrade pip \
+    && pip install --no-use-pep517 --upgrade pip cffi \
     && echo "Installing Ansible..." \
-    && pip install ansible==$ANSIBLE_VERSION ansible-lint==$ANSIBLE_LINT docker-py==$DOCKER_PY_VERSION \
-    && pip install --upgrade pycrypto pywinrm  \
+    && pip install --no-use-pep517 ansible==$ANSIBLE_VERSION ansible-lint==$ANSIBLE_LINT docker-py==$DOCKER_PY_VERSION \
+    && pip install --no-use-pep517 --upgrade pycrypto pywinrm  \
     && apk --update add sshpass openssh-client rsync \
     && echo "Removing package list..." \
     && apk del build-dependencies \
