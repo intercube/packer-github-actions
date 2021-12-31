@@ -1,7 +1,7 @@
 FROM hashicorp/packer:light@sha256:523457b5371562c4d9c21621ee85c71c31e7ff53d5ec303a5daf07c55531b84e
 
-ENV ANSIBLE_VERSION 2.12.1
-ENV ANSIBLE_LINT 3.5.1
+ENV ANSIBLE_VERSION 5.1.0
+ENV ANSIBLE_LINT 5.3.1
 ENV DOCKER_PY_VERSION 1.10.6
 
 RUN apk add --update python3 py-pip openssl ca-certificates bash git sudo zip \
