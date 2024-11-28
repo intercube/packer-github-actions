@@ -1,4 +1,5 @@
-FROM hashicorp/packer:light@sha256:523457b5371562c4d9c21621ee85c71c31e7ff53d5ec303a5daf07c55531b84e
+# see https://hub.docker.com/r/hashicorp/packer/tags for all available tags
+FROM hashicorp/packer:light@sha256:dd9868ae2b4d4fc658ed32ab9f3277b0a85ad266f8880351f2d51de038e4db5c
 
 ENV ANSIBLE_VERSION 5.1.0
 ENV ANSIBLE_LINT 5.3.1
